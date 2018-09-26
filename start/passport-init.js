@@ -11,7 +11,6 @@ module.exports = function(passport){
 
 
 	// Passport needs to be able to serialize and deserialize users to support persistent login sessions
-
 	// Passport needs to be able to serialize and deserialize users to support persistent login sessions
 
 	passport.serializeUser(function(user, done) {
@@ -29,27 +28,15 @@ module.exports = function(passport){
 	//Desieralize user will call with the unique id provided by serializeuser
 
 	passport.deserializeUser(function(username, done) {
-
-
-
 		return done(null, users[username]);
-
-
-
 	});
 
 
 
 	passport.use('login', new LocalStrategy({
-
 			passReqToCallback : true
-
 		},
-
 		function(req, username, password, done) { 
-
-
-
 			if(!users[username]){
 
 				console.log('User Not Found with username '+username);
