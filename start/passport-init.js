@@ -38,7 +38,6 @@ module.exports = function(passport){
 				return done(null, false)
 			}
 		}
-
 	));
 
 	passport.use('signup', new LocalStrategy({
